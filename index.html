@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Stop Route Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeDES_L986FMBa8BzkmHfh225nQYBB1FM&libraries=places"></script>
+</head>
+<body>
+  <div id="map"></div>
+
+  <div id="input-panel">
+    <div class="card">
+      <h2><i class="fas fa-route"></i> Multi-Stop Route Planner</h2>
+      <form id="route-form">
+        <div class="input-wrapper">
+          <i class="fas fa-location-dot"></i>
+          <input type="text" id="origin" placeholder="Enter Start Location" required>
+        </div>
+
+        <label for="stops">Stops (Add multiple stops):</label>
+        <div id="stops-container">
+          <div class="input-wrapper">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" class="stop" placeholder="Enter a Stop">
+          </div>
+        </div>
+        <button type="button" id="add-stop-btn" class="secondary-btn"><i class="fas fa-plus"></i> Add Another Stop</button>
+
+        <div class="input-wrapper">
+          <i class="fas fa-location-arrow"></i>
+          <input type="text" id="destination" placeholder="Enter Destination" required>
+        </div>
+
+        <button type="submit" class="primary-btn"><i class="fas fa-car"></i> Generate Route</button>
+      </form>
+
+      <div id="ordered-stops-container">
+        <h3><i class="fas fa-list-ol"></i> Ordered Stops:</h3>
+        <ol id="ordered-stops-list"></ol>
+      </div>
+
+      <div id="route-info">
+        <p id="distance-time"></p>
+        <button id="toggle-unit-btn" class="secondary-btn"><i class="fas fa-ruler-horizontal"></i> Km/Miles</button>
+        <button id="print-stops-btn" class="secondary-btn"><i class="fas fa-print"></i> Print Stops</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
